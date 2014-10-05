@@ -2,27 +2,45 @@ require 'spec_helper'
 
 describe "StaticPages" do
   describe "Home page" do
-    it "should contain 'Sample App'" do
-      # Run the generator again with the --webrat flag if you want to use webrat methods/matchers
-      #get static_pages_index_path
-      #response.status.should be(200)
+    it "should have the h1 'Sample App'" do
     
-      visit "/static_pages/home"
-      page.should have_content("Sample App")
+      visit '/static_pages/home'
+      page.should have_selector('h1',:text => 'Sample App')
     end
+    
+    it "should have the title 'Home'" do
+      visit '/static_pages/home'
+      page.should have_selector('title', :text => 'Home')
+    end
+    
   end
   
+
+  
+  
   describe "Help page" do
-    it "should contain 'Help'" do
-      visit "/static_pages/help"
-      page.should have_content("Help")
+    it "should have the h1 'Help'" do
+      visit '/static_pages/help'
+      page.should have_selector('h1', :text => 'Help')
     end
+    
+    it "should have the title 'Sample App | Help'" do
+      visit '/static_pages/help'
+      page.should have_selector('title', :text => 'Help')
+    end
+    
   end
   
   describe "About page" do
-    it "should contain 'About Us'" do
+    it "should have the h1 'About Us'" do
       visit "/static_pages/about"
-      page.should have_content("About Us")
+      page.should have_selector('h1', :text => 'About Us')
+    end
+    
+    
+    it "should have the title 'Sample App | About Us'" do
+      visit "/static_pages/about"
+      page.should have_selector('title', :text => 'About Us')
     end
   end
 end
