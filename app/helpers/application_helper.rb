@@ -4,7 +4,7 @@ module ApplicationHelper
     if title.empty?
       "Sample App"
     else
-      "Sample App #{title}"
+      "Sample App | #{title}"
     end
   end
   
