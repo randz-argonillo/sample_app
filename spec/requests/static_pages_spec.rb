@@ -33,15 +33,11 @@ describe "StaticPages" do
   
   describe "About page" do
     it "should have the h1 'About Us'" do
-      visit "about"
+      visit "/about"
       page.should have_selector('h1', :text => 'About Us')
     end
     
     
-    it "should have the title 'Sample App | About Us'" do
-      visit "/about"
-      page.should have_selector('title', :text => 'About Us')
-    end
   end
 end
 
