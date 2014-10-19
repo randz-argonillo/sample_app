@@ -37,6 +37,18 @@ describe "User model" do
       end
     end
   end
+  
+  describe "when email is already taken" do
+    before do
+      duplicate_user = @user.dup
+      duplicate_user.email.upcase!
+      duplicate_user.save
+    end
+    
+    it "should be invalid" do 
+      should_not be_valid
+    end
+  end
 
 
 end
