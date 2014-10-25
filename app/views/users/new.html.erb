@@ -2,21 +2,21 @@
 
 <h1>Sign up</h1>
 <div class="row">
-	<div class="span6 offeset3">
-		<%= form_for(@user) do |form|%>
-		  <%= form.label :name%>
-		  <%= form.text_field :name%>
+	<div class="span6 offset3">
+		<%= form_for(@user) do |f|%>
+		  <%= f.label :name"%>
+		  <%= f.text_field :name%>
 		  
-		  <%= form.label :email%>
-		  <%= form.text_field :email%>
+		  <%= f.label :email%>
+		  <%= f.text_field :email%>
 		  
-		  <%= form.label :password%>
-		  <%= form.password_field :password%>
+		  <%= f.label :password%>
+		  <%= f.password_field :password%>
 		  
-		  <%= form.label :password_confirmation, "Confirmation"%>
-		  <%= form.password_field :password_confirmation%>
-		  
-		  <%= form.submit "Create my account", class:"btn btn-large btn-primary"%>
+		  <%= f.label :password_confirmation, "Confirmation"%>
+		  <%= f.password_field :password_confirmation%>
+		  <br/>
+		  <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
 		<%end%>
 	</div>
 </div>
