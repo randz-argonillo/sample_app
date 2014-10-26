@@ -19,16 +19,18 @@ describe "UserPages" do
       end
     end
     
-=begin    describe "with valid information" do
-      fill_in "Name", with:"randy"
-      fill_in "Email", with:"randy.argonillo@traxtech.com"
-      fill_in "Password", with:"test"
-      fill_in "Confirmation", with:"test"
-    
-      expect {click_button submit}.to change(User, :count).by(1)
+    describe "with valid information" do
+      it "should create a user" do
+        fill_in "Name", with:"randy"
+        fill_in "Email", with:"randy.argonillo@traxtech.com"
+        fill_in "Password", with:"test"
+        fill_in "Confirmation", with:"test"
+      
+        expect {click_button submit}.to change(User, :count).by(1)
+      end
     
     end
-=end
+
   end
   
   describe "profile page" do
