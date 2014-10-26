@@ -22,9 +22,9 @@ describe "UserPages" do
     describe "with valid information" do
       it "should create a user" do
         fill_in "Name", with:"randy"
-        fill_in "Email", with:"randy.argonillo@traxtech.com"
-        fill_in "Password", with:"test"
-        fill_in "Confirmation", with:"test"
+        fill_in "Email", with:"testytr@sdf.com"
+        fill_in "Password", with:"test123456"
+        fill_in "Confirmation", with:"test123456"
       
         expect {click_button submit}.to change(User, :count).by(1)
       end
